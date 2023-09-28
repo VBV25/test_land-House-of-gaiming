@@ -57,6 +57,10 @@
     gap: 0.9486vh;
     border-radius: 110.21vw;
     background-color: $blogPreviewBgColor;
+    &:hover {
+      color: $baseTextColor;
+      background-color: $focusTextColor;
+    }
   }
 
   &__text {
@@ -84,6 +88,7 @@
     width: 100%;
     border-radius: 10px;
     border: 2px solid $borderColorBlock;
+    touch-action: none;
     &:hover {
       filter: invert(20%) sepia(2%) saturate(11%) hue-rotate(320deg) brightness(89%) contrast(86%);
     }

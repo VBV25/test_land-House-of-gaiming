@@ -58,6 +58,9 @@ $(document).ready(function () {
     };
     resetThird.call(marqueeThird.find('div'));
   }
-
   verticalTicker()
 })
+
+
+//----------
+

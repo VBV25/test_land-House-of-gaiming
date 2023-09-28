@@ -77,14 +77,14 @@ img {
 a:focus {
   color: $focusTextColor;
   img {
-    filter: invert(68%) sepia(2%) saturate(11%) hue-rotate(320deg) brightness(89%) contrast(86%);
+    filter: invert(10%) sepia(2%) saturate(11%) hue-rotate(320deg) brightness(89%) contrast(86%);
     box-shadow: 0px 0px 15px 5px $baseTextColor;
   }
 }
 a:hover {
   color: $focusTextColor;
   img {
-    filter: invert(20%) sepia(2%) saturate(11%) hue-rotate(320deg) brightness(89%) contrast(86%);
+    filter: invert(10%) sepia(60%) saturate(11%) hue-rotate(320deg) brightness(89%) contrast(86%);
     box-shadow: 0px 0px 15px 5px $bgActiveBtn;
   }
 }
@@ -95,7 +95,7 @@ button:focus {
   border-color: $borderBtnActive;
   box-shadow: 0px 0px 10px 0px $bgActiveBtn;
   img {
-    filter: invert(68%) sepia(2%) saturate(11%) hue-rotate(320deg) brightness(89%) contrast(86%);
+    filter: invert(4%) sepia(50%) saturate(6871%) hue-rotate(262deg) brightness(76%) contrast(90%);
   }
 }
 button:hover {
@@ -104,7 +104,7 @@ button:hover {
   border-color: $borderBtnActive;
   box-shadow: 0px 0px 10px 0px $bgActiveBtn;
   img {
-    filter: invert(68%) sepia(2%) saturate(11%) hue-rotate(320deg) brightness(89%) contrast(86%);
+    filter: invert(4%) sepia(50%) saturate(6871%) hue-rotate(262deg) brightness(76%) contrast(90%);
   }
 }
 //---медиа---

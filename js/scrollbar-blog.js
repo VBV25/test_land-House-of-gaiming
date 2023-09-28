@@ -89,7 +89,6 @@ function onMouseMove(event) {
     let percentScrollLineProgressbar = topHeightLineProgressbar * 100 / maxTopPositionLineProgressbar
     //высчитываем величину для смещения блока с контентом блог
     let scrollBlockContextBlogGroup = (fullHeightBlogList - heightBlogPrewGroupWrapper) * percentScrollLineProgressbar / 100
-    console.log(topHeightLineProgressbar);
     //сдвиг блока
     blogPreviewGroupWrapper.scrollTo({
       top: scrollBlockContextBlogGroup,
@@ -105,35 +104,6 @@ function mousePosition(event) {
   yMouse = event.clientY
   xMouse = event.clientX
 }
-
-//----синхронизация скроллбара кастомного с прокручиваемым блоком
-blogPreviewGroupWrapper.addEventListener('scroll', () => {
-  gettingВimensionsBlockFn()
-  percentBlogListScrollFn()
-  blogProgressbarLine.style.top = topPositionScrollTracker * r / (100 - q) + 'px'
-})
-//---------
-
-//----функция драгон дроп---
-window.onmousedown = function (event) {
-  newPositionProgressbarLine()
-  mousePosition(event)
-  if (topPositionProgressbarLine <= yMouse && yMouse <= botomPositionProgressbarLine && leftPositionProgressbarLine <= xMouse && xMouse <= rightPositionProgressbarLine) {
-    mousePosition(event)
-    //включение перетаскивания
-    document.addEventListener('mousemove', onMouseMove, false);
-    //отключение драгон дроп функции
-    window.onmouseup = () => {
-      returnMouseMove(event)
-      return
-    };
-    //доп отключение драгон дроп функции
-    window.onclick = () => {
-      returnMouseMove(event)
-      return
-    };
-  }
-};
 
 //если трекер скролл бара вышел за пределы допустимого положения возвращаем его обратно на крайние соответствующие места
 function collisionLineScrollbar() {
@@ -152,10 +122,72 @@ function collisionLineScrollbar() {
   }
 }
 
-document.onmousemove = () => {
+
+//----синхронизация скроллбара кастомного------
+//-------- с прокручиваемым блоком-------
+blogPreviewGroupWrapper.addEventListener('scroll', () => {
+  gettingВimensionsBlockFn()
+  percentBlogListScrollFn()
+  blogProgressbarLine.style.top = topPositionScrollTracker * r / (100 - q) + 'px'
+})
+//-----------------------------------------
+
+
+//----------функция драгон дроп--------
+window.onmousedown = function (event) {
   newPositionProgressbarLine()
-  collisionLineScrollbar()
+  mousePosition(event)
+  if (topPositionProgressbarLine <= yMouse && yMouse <= botomPositionProgressbarLine && leftPositionProgressbarLine <= xMouse && xMouse <= rightPositionProgressbarLine) {
+    mousePosition(event)
+    //включение перетаскивания
+    document.addEventListener('mousemove', onMouseMove, false);
+    //отключение драгон дроп функции
+    window.onmouseup = () => {
+      returnMouseMove(event)
+      newPositionProgressbarLine()
+      collisionLineScrollbar()
+      return
+    };
+    //доп отключение драгон дроп функции
+    window.onclick = () => {
+      returnMouseMove(event)
+      newPositionProgressbarLine()
+      collisionLineScrollbar()
+      return
+    };
+  }
+};
+
+
+//----функция тач---
+function returnTuchMove(event) {
+  document.removeEventListener('pointermove', onMouseMove, false);
+  blogProgressbarLine.onpointerup = false;
 }
+window.onpointerdown = function (event) {
+  newPositionProgressbarLine()
+  mousePosition(event)
+  if (topPositionProgressbarLine <= yMouse && yMouse <= botomPositionProgressbarLine && leftPositionProgressbarLine <= xMouse && xMouse <= rightPositionProgressbarLine) {
+    mousePosition(event)
+    //включение перетаскивания
+    document.addEventListener('pointermove', onMouseMove, false);
+    //отключение драгон дроп функции
+    window.onpointerup = () => {
+      returnTuchMove(event)
+      newPositionProgressbarLine()
+      collisionLineScrollbar()
+      return
+    };
+    //доп отключение драгон дроп функции
+    window.onclick = () => {
+      returnTuchMove(event)
+      newPositionProgressbarLine()
+      collisionLineScrollbar()
+      return
+    };
+  }
+};
+
 
 //----ВЫЗОВ ФУНКЦИЙ---
 window.onload = function () {
