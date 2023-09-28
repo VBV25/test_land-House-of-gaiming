@@ -1,0 +1,52 @@
+.footer {
+  position: relative;
+  z-index: 50;
+  padding: 2.8459vh 0vw 1.581vh;
+  color: $baseTextColor;
+  border-radius: 64px 64px 0px 0px;
+  border-color: $borderColorBlock;
+  border-style: solid;
+  border-width: 4px 4px 0px 4px;
+  background-color: $footerBgColor;
+  &__wrapper {
+    width: var(--widthContentWrapper);
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__nav {
+    display: flex;
+    gap: 40px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: end;
+    @include fontSize(16px, 120%, 400);
+  }
+
+  &__social {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+  }
+  &__social-title {
+    @include fontSize(16px, 120%, 400);
+    text-align: end;
+  }
+  &__social-group {
+    display: flex;
+    justify-content: end;
+    gap: 8px;
+  }
+
+  &__social-link {
+    width: 32px;
+    height: 32px;
+    // background-color: $borderColorBlock;
+    img {
+      border-radius: 50%;
+    }
+  }
+}

@@ -1,0 +1,58 @@
+.vertical-ticker {
+  display: flex;
+  width: max-content;
+  height: 100%;
+  overflow: hidden;
+  &__first,
+  &__second,
+  &__third {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: max-content;
+    height: 100%;
+    overflow: hidden;
+    .marquee {
+      width: max-content;
+      display: flex !important;
+      flex-direction: column !important;
+      img {
+        margin: 10px;
+        width: 5.21vw;
+        height: auto;
+      }
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0;
+      box-shadow: 0px 0px 90px 100px $footerBgColor;
+    }
+  }
+  &__first {
+    opacity: 0.2;
+  }
+  &__second {
+    opacity: 0.7;
+    bottom: 0;
+    align-self: end;
+    height: max-content;
+    &:before {
+      box-shadow: 0px 0px 100px 70px $footerBgColor;
+    }
+  }
+  &__third {
+    opacity: 0.4;
+    &:before {
+      box-shadow: 0px 0px 90px 70px $footerBgColor;
+    }
+  }
+}
+
+.horizontal-ticker {
+  display: none;
+}

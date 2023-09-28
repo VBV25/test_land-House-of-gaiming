@@ -1,0 +1,138 @@
+@import "null-style";
+@import "mixin";
+
+//---переменные---
+:root {
+  --widthContentWrapper: 85.42%;
+  --previewGroup: 24.323vw;
+}
+
+$baseTextColor: #ffffff;
+$accentTextColor: #478bf9;
+$heroSubtitleColor: rgba(255, 255, 255, 0.6);
+$heroBtnBg: #478bf9;
+$borderColorBlock: #478bf9;
+$borderBtnColor: #9dadf2;
+$footerBgColor: #1e1231;
+$activeMenuTextColor: #478bf9;
+$focusTextColor: #969696;
+$bgActiveBtn: #ffffffcc;
+$textActiveBtn: #1e1231;
+$borderBtnActive: #478bf9;
+$blogPreviewBgColor: #1e1231;
+$blogActivePreviewBgColor: #478bf9;
+$bgColorBlogGroup: #36344a;
+$bgScrollBarColor: #53546b;
+//---конец переменных---
+
+//----шрифты---
+@font-face {
+  font-family: "Gotham Pro";
+  src: url("../fonts/gothampro.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+//----конец шрифтов---
+
+//-----ОБЩИЕ СТИЛИ-----
+body {
+  position: relative;
+  height: max-content;
+  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: "Gotham Pro";
+  background-color: #110a1d;
+}
+
+.main {
+  display: grid;
+  flex-grow: 1;
+  &__wrapper {
+    width: var(--widthContentWrapper);
+    height: 75.8893vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+  }
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.active-footer-nav-link {
+  text-decoration: underline;
+  color: $activeMenuTextColor;
+}
+
+.active-preview-blog {
+  background-color: $blogActivePreviewBgColor !important;
+}
+
+a:focus {
+  color: $focusTextColor;
+  img {
+    filter: invert(68%) sepia(2%) saturate(11%) hue-rotate(320deg) brightness(89%) contrast(86%);
+    box-shadow: 0px 0px 15px 5px $baseTextColor;
+  }
+}
+a:hover {
+  color: $focusTextColor;
+  img {
+    filter: invert(20%) sepia(2%) saturate(11%) hue-rotate(320deg) brightness(89%) contrast(86%);
+    box-shadow: 0px 0px 15px 5px $bgActiveBtn;
+  }
+}
+
+button:focus {
+  color: $textActiveBtn;
+  background-color: $bgActiveBtn;
+  border-color: $borderBtnActive;
+  box-shadow: 0px 0px 10px 0px $bgActiveBtn;
+  img {
+    filter: invert(68%) sepia(2%) saturate(11%) hue-rotate(320deg) brightness(89%) contrast(86%);
+  }
+}
+button:hover {
+  color: $textActiveBtn;
+  background-color: $bgActiveBtn;
+  border-color: $borderBtnActive;
+  box-shadow: 0px 0px 10px 0px $bgActiveBtn;
+  img {
+    filter: invert(68%) sepia(2%) saturate(11%) hue-rotate(320deg) brightness(89%) contrast(86%);
+  }
+}
+//---медиа---
+/*
+@media (max-width: 600px) {
+  :root {
+    --widthContentWrapper: 360px;
+  }
+  .container-wrapper {
+    border: 2px solid rgb(0, 21, 255);
+  }
+}
+@media (max-width: 365px) {
+  :root {
+    --widthContentWrapper: 280px;
+  }
+  .container-wrapper {
+    border: 2px solid rgb(0, 21, 255);
+  }
+}
+*/
+//-----
+
+//-------КОНЕЦ ОБЩИХ СТИЛЕЙ-----
+
+//-----ИМПОРТИРУЕМЫЕ СТИЛИ---
+@import "header";
+@import "footer";
+@import "start-page-main-section/hero";
+@import "start-page-main-section/ticker";
+@import "start-page-main-section/blog";

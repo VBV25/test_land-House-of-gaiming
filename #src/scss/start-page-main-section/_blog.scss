@@ -1,0 +1,114 @@
+.blog {
+  // position: relative;
+  z-index: 5;
+  width: 27.6563vw;
+  height: 47.0356vh;
+  display: flex;
+  flex-direction: column;
+  color: $baseTextColor;
+  &::before {
+    z-index: -5;
+    content: "";
+    position: absolute;
+    bottom: -25%;
+    right: -10%;
+    width: 0px;
+    height: 0px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 200px 450px #478bf93c;
+  }
+  &__title {
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 1.1067vh;
+    @include fontSize(40px, 40px, 700);
+  }
+  &__preview-group-wrapper {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    display: flex;
+    background-color: $bgColorBlogGroup;
+    border-width: 3px;
+    border-color: $borderColorBlock;
+    border-style: solid;
+    border-radius: 5.21vw;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  &__preview-group {
+    box-sizing: content-box;
+    position: relative;
+    top: 0px;
+    //left: 1vw;
+    width: var(--previewGroup);
+    height: max-content;
+    padding: 1.1858vh 0 1.1858vh 1.2vw;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__preview {
+    width: 100%;
+    padding: 1.2648vh 3.3333vw;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9486vh;
+    border-radius: 110.21vw;
+    background-color: $blogPreviewBgColor;
+  }
+
+  &__text {
+    @include fontSize(1.25vw, 117%, 400);
+  }
+
+  &__data {
+    @include fontSize(0.73vw, 114%, 600);
+  }
+  /*---скролл-бар---*/
+  &__progressbar {
+    height: 60%;
+    width: 8px;
+    background: $bgScrollBarColor;
+    position: sticky;
+    top: 20%;
+    left: 96%;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+  &__progressbar-line {
+    position: absolute;
+    z-index: 1000;
+    background-color: $borderColorBlock;
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid $borderColorBlock;
+    &:hover {
+      filter: invert(20%) sepia(2%) saturate(11%) hue-rotate(320deg) brightness(89%) contrast(86%);
+    }
+  }
+}
+
+.blog__preview-group-wrapper::-webkit-scrollbar {
+  width: 0px;
+}
+
+.blog__preview-group-wrapper::-webkit-scrollbar-track {
+  background: $bgScrollBarColor;
+  border-radius: 10px;
+}
+
+.blog__preview-group-wrapper::-webkit-scrollbar-thumb {
+  background-color: $borderColorBlock;
+  border-radius: 10px;
+}
+
+#rr {
+  display: flex;
+  border: 2px solid red;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}

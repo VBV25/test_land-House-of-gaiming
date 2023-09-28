@@ -1,0 +1,15 @@
+//--------------------------миксины-------------------------
+//вставка изображения как фона(без ссылки на изображение)
+@mixin bgImg($bgImSize: 100% 100%, $bgPosition: center, $bgRepeat: no-repeat) {
+  background-size: $bgImSize;
+  background-position: $bgPosition;
+  background-repeat: $bgRepeat;
+}
+
+//параметры шрифтов
+@mixin fontSize($fs: 16px, $liHe: 24px, $fWe: 400) {
+  font-size: $fs;
+  font-weight: $fWe;
+  line-height: $liHe;
+  font-style: normal;
+}
