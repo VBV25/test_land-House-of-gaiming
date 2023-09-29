@@ -21,7 +21,7 @@
     text-align: center;
     text-transform: uppercase;
     margin-bottom: 1.1067vh;
-    @include fontSize(40px, 40px, 700);
+    @include fontSize(2.0833vw, 100%, 700);
   }
   &__preview-group-wrapper {
     position: relative;

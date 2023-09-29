@@ -477,9 +477,9 @@ button:hover {
     text-align: center;
     text-transform: uppercase;
     margin-bottom: 1.1067vh;
-    font-size: 40px;
+    font-size: 2.0833vw;
     font-weight: 700;
-    line-height: 40px;
+    line-height: 100%;
     font-style: normal; }
   .blog__preview-group-wrapper {
     position: relative;
