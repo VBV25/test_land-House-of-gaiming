@@ -345,6 +345,7 @@ button:hover {
     width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;
+    max-width: 100%;
     color: #ffffff;
     font-size: 5vw;
     font-weight: 600;
@@ -353,9 +354,8 @@ button:hover {
     .hero__title span {
       color: #478bf9; }
   .hero__subtitle {
-    width: -webkit-max-content;
-    width: -moz-max-content;
-    width: max-content;
+    display: block;
+    width: 100%;
     margin: 2.7668vh 0px 3.5573vh;
     color: rgba(255, 255, 255, 0.6);
     -webkit-hyphens: auto;

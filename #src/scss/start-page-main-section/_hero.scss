@@ -19,6 +19,7 @@
   }
   &__title {
     width: max-content;
+    max-width: 100%;
     color: $baseTextColor;
     @include fontSize(5vw, 100%, 600);
     span {
@@ -27,7 +28,8 @@
   }
 
   &__subtitle {
-    width: max-content;
+    display: block;
+    width: 100%;
     margin: 2.7668vh 0px 3.5573vh;
     color: $heroSubtitleColor;
     hyphens: auto;
