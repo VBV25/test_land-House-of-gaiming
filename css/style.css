@@ -358,6 +358,9 @@ button:hover {
     width: max-content;
     margin: 2.7668vh 0px 3.5573vh;
     color: rgba(255, 255, 255, 0.6);
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
     font-size: 1.66667vw;
     font-weight: 600;
     line-height: 100%;

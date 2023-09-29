@@ -30,6 +30,7 @@
     width: max-content;
     margin: 2.7668vh 0px 3.5573vh;
     color: $heroSubtitleColor;
+    hyphens: auto;
     @include fontSize(1.66667vw, 100%, 600);
   }
 
