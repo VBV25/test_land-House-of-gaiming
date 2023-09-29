@@ -194,3 +194,13 @@ window.onload = function () {
   gettingВimensionsBlockFn()
   percentBlogVisibleOrListFn()
 };
+
+
+$(window).resize(function () {
+  gettingВimensionsBlockFn()
+  percentBlogVisibleOrListFn()
+});
+/*
+windоw.addEventListener('resize', () => {
+  
+});*/

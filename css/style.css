@@ -71,6 +71,7 @@ body {
   height: max-content;
   min-height: 100vh;
   height: 100vh;
+  max-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -89,10 +90,12 @@ body {
   display: grid;
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
-  flex-grow: 1; }
+  flex-grow: 1;
+  -ms-flex-line-pack: end;
+  align-content: end; }
   .main__wrapper {
     width: var(--widthContentWrapper);
-    height: 75.8893vh;
+    height: 76.2vh;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -173,9 +176,9 @@ button:hover {
   color: #ffffff; }
   .header__wrapper {
     width: var(--widthContentWrapper);
-    margin: 16px auto 5px;
+    margin: 1.2648vh auto 0.3953vh;
     padding: 1.9763vh 2.5vw;
-    border-radius: 64px;
+    border-radius: 3.3333vw;
     border: 4px solid #478bf9; }
   .header__content {
     width: 100%;
@@ -211,7 +214,7 @@ button:hover {
     min-width: -webkit-max-content;
     min-width: -moz-max-content;
     min-width: max-content;
-    font-size: 16px;
+    font-size: 0.8333vw;
     font-weight: 400;
     line-height: 120%;
     font-style: normal; }
@@ -233,8 +236,8 @@ button:hover {
     align-items: center;
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
-    gap: 10px;
-    font-size: 16px;
+    gap: 0.5208vw;
+    font-size: 0.8333vw;
     font-weight: 400;
     line-height: 120%;
     font-style: normal;
@@ -242,9 +245,9 @@ button:hover {
     background-color: unset;
     text-transform: uppercase;
     border: 2px solid #9dadf2;
-    border-radius: 24px; }
+    border-radius: 1.25vw; }
     .header__btn img {
-      width: 16px; }
+      width: 0.8333vw; }
   .header #signUp {
     background-color: #478bf9;
     color: #ffffff;
@@ -258,7 +261,7 @@ button:hover {
   z-index: 50;
   padding: 2.8459vh 0vw 1.581vh;
   color: #ffffff;
-  border-radius: 64px 64px 0px 0px;
+  border-radius: 3.3333vw 3.3333vw 0px 0px;
   border-color: #478bf9;
   border-style: solid;
   border-width: 4px 4px 0px 4px;
@@ -276,7 +279,7 @@ button:hover {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    gap: 40px; }
+    gap: 2.0833vw; }
   .footer__link {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -284,7 +287,7 @@ button:hover {
     -webkit-box-align: end;
     -ms-flex-align: end;
     align-items: end;
-    font-size: 16px;
+    font-size: 0.8333vw;
     font-weight: 400;
     line-height: 120%;
     font-style: normal; }
@@ -296,9 +299,9 @@ button:hover {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    gap: 13px; }
+    gap: 1.0277vh; }
   .footer__social-title {
-    font-size: 16px;
+    font-size: 0.8333vw;
     font-weight: 400;
     line-height: 120%;
     font-style: normal;
@@ -310,10 +313,10 @@ button:hover {
     -webkit-box-pack: end;
     -ms-flex-pack: end;
     justify-content: end;
-    gap: 8px; }
+    gap: 0.4167vw; }
   .footer__social-link {
-    width: 32px;
-    height: 32px; }
+    width: 1.7625vw;
+    height: 1.7625vw; }
     .footer__social-link img {
       border-radius: 50%; }
 
@@ -331,13 +334,17 @@ button:hover {
     top: 20%;
     left: -75%;
     width: 170%;
-    height: 0px;
+    height: 150px;
     border-radius: 50%;
-    -webkit-box-shadow: 0px 0px 70px 70px #478bf935;
-    box-shadow: 0px 0px 70px 70px #478bf935;
+    background-color: rgba(71, 139, 249, 0.148);
+    -webkit-box-shadow: 0px 0px 70px 70px rgba(71, 139, 249, 0.158);
+    box-shadow: 0px 0px 70px 70px rgba(71, 139, 249, 0.158);
     -webkit-transform: rotateZ(35deg) rotateX(0deg);
     transform: rotateZ(35deg) rotateX(0deg); }
   .hero__title {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
     color: #ffffff;
     font-size: 5vw;
     font-weight: 600;
@@ -346,6 +353,9 @@ button:hover {
     .hero__title span {
       color: #478bf9; }
   .hero__subtitle {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
     margin: 2.7668vh 0px 3.5573vh;
     color: rgba(255, 255, 255, 0.6);
     font-size: 1.66667vw;
@@ -402,7 +412,7 @@ button:hover {
       flex-direction: column !important; }
       .vertical-ticker__first .marquee img, .vertical-ticker__second .marquee img, .vertical-ticker__third .marquee img {
         margin: 10px;
-        width: 5.21vw;
+        width: 4.51vw;
         height: auto; }
     .vertical-ticker__first:before, .vertical-ticker__second:before, .vertical-ticker__third:before {
       content: "";
@@ -439,7 +449,7 @@ button:hover {
 .blog {
   z-index: 5;
   width: 27.6563vw;
-  height: 47.0356vh;
+  height: 50.0356vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

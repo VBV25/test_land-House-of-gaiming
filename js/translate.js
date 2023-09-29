@@ -49,6 +49,11 @@ function translateBlockFn(baseArr) {
 }
 
 btnLanguage.onclick = () => {
+  //для скролла в блоге
+  gettingВimensionsBlockFn()
+  percentBlogVisibleOrListFn()
+
+  //перевод
   btnLanguage.classList.toggle('ru')
   if (btnLanguage.classList.contains('ru')) {
     btnLanguage.querySelector('span').innerText = 'ru'

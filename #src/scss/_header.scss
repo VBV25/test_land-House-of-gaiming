@@ -2,9 +2,9 @@
   color: $baseTextColor;
   &__wrapper {
     width: var(--widthContentWrapper);
-    margin: 16px auto 5px;
+    margin: 1.2648vh auto 0.3953vh;
     padding: 1.9763vh 2.5vw;
-    border-radius: 64px;
+    border-radius: 3.3333vw;
     border: 4px solid $borderColorBlock;
   }
 
@@ -33,7 +33,7 @@
   &__link {
     display: flex;
     min-width: max-content;
-    @include fontSize(16px, 120%, 400);
+    @include fontSize(0.8333vw, 120%, 400);
   }
   &__btn-group {
     display: flex;
@@ -45,15 +45,15 @@
     display: flex;
     align-items: center;
     flex-wrap: nowrap;
-    gap: 10px;
-    @include fontSize(16px, 120%, 400);
+    gap: 0.5208vw;
+    @include fontSize(0.8333vw, 120%, 400);
     color: $baseTextColor;
     background-color: unset;
     text-transform: uppercase;
     border: 2px solid $borderBtnColor;
-    border-radius: 24px;
+    border-radius: 1.25vw;
     img {
-      width: 16px;
+      width: 0.8333vw;
     }
   }
   #signUp {
