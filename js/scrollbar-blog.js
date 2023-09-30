@@ -196,11 +196,4 @@ window.onload = function () {
 };
 
 
-$(window).resize(function () {
-  gettingВimensionsBlockFn()
-  percentBlogVisibleOrListFn()
-});
-/*
-windоw.addEventListener('resize', () => {
-  
-});*/
+

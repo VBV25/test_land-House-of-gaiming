@@ -15,10 +15,10 @@
 </head>
 
 <body>
-    <header class="header">
+    <header class="header" id="header">
         <section class="header__wrapper">
             <h6 style="display: none;">HOUSE OF GAMBLING</h6>
-            <div class="header__content">
+            <div class="header__content" id="nav-block-header">
                 <div class="header__logo">
                     <img src="#" alt="logo">
                 </div>
@@ -38,60 +38,108 @@
                     <button class="header__btn " type="button" tabindex="8" id="loginIn">Login in</button>
                     <button class="header__btn " type="button" tabindex="9" id="signUp">Sign up</button>
                 </div>
+
+            </div>
+            <div class="header__content-mobile">
+                <div class="header__mobile-btn-group">
+                    <button class="header__mobile-btn language" type="button" tabindex="7" id="language-mobile"
+                        data-lang=en>
+                        <img src="img/language.svg" alt="language">
+                    </button>
+                    <div class="header__burger-btn" id="btn-menu-burger">
+                        <div class="header__burger-line"></div>
+                    </div>
+                </div>
             </div>
         </section>
     </header>
 
     <main class="main">
         <div class="main__wrapper">
+            <!--'Главная секция'-->
             <section class="hero">
                 <h1 class="hero__title">HOUSE OF <br><span>GAMBLING</span></h1>
                 <p class="hero__subtitle translate-text">Raise your ROI with direct advertiser</p>
                 <button class="hero__btn translate-text" type="button" tabindex="10">Become a Partner</button>
             </section>
-            <section class="vertical-ticker">
+            <!--'Главная секция конец'-->
+
+            <!--'Бегущие строки'-->
+            <section class="vertical-ticker" id="vertical-ticker-wrapper">
                 <h6 style="display: none;">vertical-ticker</h6>
-                <div class="vertical-ticker__first">
-                    <div class="marquee" id="first-marquee">
-                        <img src="img/money.svg" alt="img">
-                        <img src="img/soccer.svg" alt="img">
-                        <img src="img/greenM.svg" alt="img">
-                        <img src="img/shield.svg" alt="img">
-                        <img src="img/money.svg" alt="img">
-                        <img src="img/soccer.svg" alt="img">
-                        <img src="img/greenM.svg" alt="img">
-                        <img src="img/shield.svg" alt="img">
+                <div class="vertical-ticker__container">
+                    <div class="vertical-ticker__first">
+                        <div class="marquee" id="vertical-first-marquee">
+                            <article class="ticker-img-group">
+                                <img src="img/money.svg" alt="img">
+                                <img src="img/soccer.svg" alt="img">
+                                <img src="img/greenM.svg" alt="img">
+                                <img src="img/shield.svg" alt="img">
+                            </article>
+                        </div>
                     </div>
-                </div>
-                <div class="vertical-ticker__second">
-                    <div class="marquee" id="second-marquee">
-                        <img src="img/m.svg" alt="img">
-                        <img src="img/timer.svg" alt="img">
-                        <img src="img/crown.svg" alt="img">
-                        <img src="img/world.svg" alt="img">
-                        <img src="img/m.svg" alt="img">
-                        <img src="img/timer.svg" alt="img">
-                        <img src="img/crown.svg" alt="img">
-                        <img src="img/world.svg" alt="img">
+                    <div class="vertical-ticker__second">
+                        <div class="marquee" id="vertical-second-marquee">
+                            <article class="ticker-img-group">
+                                <img src="img/m.svg" alt="img">
+                                <img src="img/timer.svg" alt="img">
+                                <img src="img/crown.svg" alt="img">
+                                <img src="img/world.svg" alt="img">
+                            </article>
+                        </div>
                     </div>
-                </div>
-                <div class="vertical-ticker__third">
-                    <div class="marquee" id="third-marquee">
-                        <img src="img/bigCrown.svg" alt="img">
-                        <img src="img/blueM.svg" alt="img">
-                        <img src="img/shield.svg" alt="img">
-                        <img src="img/soccer.svg" alt="img">
-                        <img src="img/bigCrown.svg" alt="img">
-                        <img src="img/blueM.svg" alt="img">
-                        <img src="img/shield.svg" alt="img">
-                        <img src="img/soccer.svg" alt="img">
+                    <div class="vertical-ticker__third">
+                        <div class="marquee" id="vertical-third-marquee">
+                            <article class="ticker-img-group">
+                                <img src="img/bigCrown.svg" alt="img">
+                                <img src="img/blueM.svg" alt="img">
+                                <img src="img/shield.svg" alt="img">
+                                <img src="img/soccer.svg" alt="img">
+                            </article>
+
+                        </div>
                     </div>
                 </div>
             </section>
-            <section class="
-horizontal-ticker">
+            <section class="horizontal-ticker" id="horizontal-ticker-wrapper">
                 <h6 style="display: none;">horizontal-ticker</h6>
+                <div class="horizontal-ticker__container">
+                    <div class="horizontal-ticker__first">
+                        <div class="marquee" id="horizontal-first-marquee">
+                            <article class="ticker-img-group">
+                                <img src="img/money.svg" alt="img">
+                                <img src="img/soccer.svg" alt="img">
+                                <img src="img/greenM.svg" alt="img">
+                                <img src="img/shield.svg" alt="img">
+                            </article>
+                        </div>
+                    </div>
+                    <div class="horizontal-ticker__second">
+                        <div class="marquee" id="horizontal-second-marquee">
+                            <article class="ticker-img-group">
+                                <img src="img/m.svg" alt="img">
+                                <img src="img/timer.svg" alt="img">
+                                <img src="img/crown.svg" alt="img">
+                                <img src="img/world.svg" alt="img">
+                            </article>
+                        </div>
+                    </div>
+                    <div class="horizontal-ticker__third">
+                        <div class="marquee" id="horizontal-third-marquee">
+                            <article class="ticker-img-group">
+                                <img src="img/bigCrown.svg" alt="img">
+                                <img src="img/blueM.svg" alt="img">
+                                <img src="img/shield.svg" alt="img">
+                                <img src="img/soccer.svg" alt="img">
+                            </article>
+
+                        </div>
+                    </div>
+                </div>
             </section>
+            <!--'Бегущие строки конец'-->
+
+            <!--'Блог'-->
             <section class="blog">
                 <h2 class="blog__title translate-text">Blog</h2>
                 <div class="blog__preview-group-wrapper" id="blog-preview-group-wrapper">
@@ -159,8 +207,10 @@ horizontal-ticker">
                 </div>
 
             </section>
+            <!--'Блог конец'-->
         </div>
     </main>
+
     <footer class="footer">
         <section class="footer__wrapper">
             <nav class="footer__nav">
@@ -215,11 +265,9 @@ horizontal-ticker">
     </footer>
     <!--'script'-->
     <script src="js/script.js"></script>
-    <script src="js/scrollbar-blog.js"></script>
     <script src="js/translate.js"></script>
-
-
-
+    <script src="js/scrollbar-blog.js"></script>
+    <script src="js/resize-window.js"></script>
 </body>
 
 </html>

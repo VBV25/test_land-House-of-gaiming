@@ -1,4 +1,5 @@
 const btnLanguage = document.getElementById('language');
+const btnMobileLanguage = document.getElementById('language-mobile');
 const btnLoginIn = document.getElementById('loginIn');
 const btnSignUp = document.getElementById('signUp');
 const translateOblectsArr = Array.from(document.querySelectorAll('.translate-text'))
@@ -10,6 +11,8 @@ let translateList = [
   ['News', 'Новости'],
   ['Contact us', 'Связь'],
   ['Careers', 'Карьера'],
+  ['Login in', 'Вход'],
+  ['Sign up', 'Регистрация'],
   ['Blog', 'Блог'],
   ['Raise your ROI with direct advertiser', 'Повысьте рентабельность инвестиций с помощью прямого рекламодателя'],
   ['Become a Partner', 'Стать партнером'],
@@ -52,23 +55,32 @@ btnLanguage.onclick = () => {
   //для скролла в блоге
   gettingВimensionsBlockFn()
   percentBlogVisibleOrListFn()
-
   //перевод
   btnLanguage.classList.toggle('ru')
   if (btnLanguage.classList.contains('ru')) {
     btnLanguage.querySelector('span').innerText = 'ru'
     btnLanguage.setAttribute('data-lang', 'ru')
-    //
-    btnLoginIn.innerHTML = 'Вход'
-    btnSignUp.innerHTML = 'Регистрация'
   }
   else {
     btnLanguage.querySelector('span').innerText = 'en'
     btnLanguage.setAttribute('data-lang', 'en')
-    //
-    btnLoginIn.innerHTML = 'Login in'
-    btnSignUp.innerHTML = 'Sign up'
+  }
+  translateBlockFn(translateList)
+}
 
+btnMobileLanguage.onclick = () => {
+  //для скролла в блоге
+  gettingВimensionsBlockFn()
+  percentBlogVisibleOrListFn()
+  //перевод
+  btnLanguage.classList.toggle('ru')
+  if (btnLanguage.classList.contains('ru')) {
+    btnLanguage.querySelector('span').innerText = 'ru'
+    btnLanguage.setAttribute('data-lang', 'ru')
+  }
+  else {
+    btnLanguage.querySelector('span').innerText = 'en'
+    btnLanguage.setAttribute('data-lang', 'en')
   }
   translateBlockFn(translateList)
 }

@@ -1,24 +1,34 @@
-.vertical-ticker {
-  display: flex;
+.vertical-ticker,
+.horizontal-ticker {
   width: max-content;
   height: 100%;
   overflow: hidden;
+  &__container {
+    width: max-content;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+  }
   &__first,
   &__second,
   &__third {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    align-self: center;
     width: max-content;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
     overflow: hidden;
     .marquee {
       width: max-content;
+      height: max-content;
       display: flex !important;
-      flex-direction: column !important;
+      flex-direction: column;
+
       img {
-        margin: 10px;
+        margin: 0.7905vh 0.5194vw;
         width: 4.51vw;
         height: auto;
       }
@@ -38,9 +48,15 @@
   }
   &__second {
     opacity: 0.7;
-    bottom: 0;
-    align-self: end;
-    height: max-content;
+    justify-content: end;
+    align-items: end;
+    .marquee {
+      align-items: end;
+      justify-content: end;
+      position: relative;
+      bottom: 0;
+      right: 0;
+    }
     &:before {
       box-shadow: 0px 0px 100px 70px $footerBgColor;
     }
@@ -52,7 +68,84 @@
     }
   }
 }
-
+.ticker-img-group {
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  height: max-content;
+}
 .horizontal-ticker {
   display: none;
+}
+.vertical-ticker {
+  display: flex;
+}
+
+@media (orientation: portrait) {
+  .horizontal-ticker,
+  .vertical-ticker {
+    width: 100%;
+    height: max-content;
+    overflow: hidden;
+
+    &__container {
+      width: 100vw;
+      height: max-content;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    &__first,
+    &__second,
+    &__third {
+      flex-direction: row;
+
+      width: 100%;
+      height: max-content;
+      overflow: hidden;
+      .marquee {
+        overflow: hidden;
+        height: max-content;
+        flex-direction: row;
+        img {
+          margin: 10px;
+          width: 15.625vw;
+          height: auto;
+        }
+      }
+      &:before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0;
+        box-shadow: 0px 0px 90px 100px $footerBgColor;
+      }
+    }
+    &__first {
+      opacity: 1;
+    }
+    &__second {
+      opacity: 0.7;
+
+      &:before {
+        box-shadow: 0px 0px 100px 70px $footerBgColor;
+      }
+    }
+    &__third {
+      opacity: 0.4;
+      &:before {
+        box-shadow: 0px 0px 90px 70px $footerBgColor;
+      }
+    }
+  }
+  .ticker-img-group {
+    flex-direction: row;
+  }
+  .horizontal-ticker {
+    display: flex;
+  }
+  .vertical-ticker {
+    display: none;
+  }
 }

@@ -6,7 +6,7 @@
   --widthContentWrapper: 85.42%;
   --previewGroup: 24.323vw;
 }
-
+$documentBg: #110a1d;
 $baseTextColor: #ffffff;
 $accentTextColor: #478bf9;
 $heroSubtitleColor: rgba(255, 255, 255, 0.6);
@@ -23,39 +23,42 @@ $blogPreviewBgColor: #1e1231;
 $blogActivePreviewBgColor: #478bf9;
 $bgColorBlogGroup: #36344a;
 $bgScrollBarColor: #53546b;
+$burgerBtn: #ffffff;
 //---конец переменных---
 
 //----шрифты---
 @font-face {
-  font-family: "Gotham Pro";
-  src: url("../fonts/gothampro.ttf") format("truetype");
+  font-family: "Lexend";
+  src: url("../fonts/Lexend-Regular.ttf") format("truetype");
   font-style: normal;
   font-weight: normal;
 }
 //----конец шрифтов---
 
 //-----ОБЩИЕ СТИЛИ-----
+
 body {
   position: relative;
-  height: max-content;
-  min-height: 100vh;
-  height: 100vh;
-  max-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  font-family: "Gotham Pro";
-  background-color: #110a1d;
+  width: 100%;
+  height: 100vh !important;
+  padding-top: 0.5vh;
+  display: grid;
+  grid-template-rows: max-content 1fr max-content;
+  grid-template-columns: 1fr;
+  font-family: "Lexend", sans-serif;
+  background-color: $documentBg;
+  overflow: hidden;
 }
 
 .main {
-  display: grid;
-  flex-grow: 1;
-  align-content: end;
+  display: flex;
+  width: 100%;
+  height: 72.5vh;
+  align-self: end;
 
   &__wrapper {
     width: var(--widthContentWrapper);
-    height: 76.2vh;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -67,6 +70,52 @@ img {
   width: 100%;
   height: auto;
 }
+
+//---медиа---
+@media (orientation: portrait) {
+  :root {
+    --widthContentWrapper: 94vw;
+    //--previewGroup: 24.323vw;
+  }
+  body {
+    height: max-content !important;
+    display: block;
+    overflow: unset;
+  }
+
+  .main {
+    height: max-content;
+    align-self: start;
+
+    &__wrapper {
+      height: max-content;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+    }
+  }
+}
+/*
+@media (max-width: 600px) {
+  :root {
+    --widthContentWrapper: 360px;
+  }
+  .container-wrapper {
+    border: 2px solid rgb(0, 21, 255);
+  }
+}
+@media (max-width: 365px) {
+  :root {
+    --widthContentWrapper: 280px;
+  }
+  .container-wrapper {
+    border: 2px solid rgb(0, 21, 255);
+  }
+}
+*/
+//-----
 
 .active-footer-nav-link {
   text-decoration: underline;
@@ -110,27 +159,6 @@ button:hover {
     filter: invert(4%) sepia(50%) saturate(6871%) hue-rotate(262deg) brightness(76%) contrast(90%);
   }
 }
-//---медиа---
-/*
-@media (max-width: 600px) {
-  :root {
-    --widthContentWrapper: 360px;
-  }
-  .container-wrapper {
-    border: 2px solid rgb(0, 21, 255);
-  }
-}
-@media (max-width: 365px) {
-  :root {
-    --widthContentWrapper: 280px;
-  }
-  .container-wrapper {
-    border: 2px solid rgb(0, 21, 255);
-  }
-}
-*/
-//-----
-
 //-------КОНЕЦ ОБЩИХ СТИЛЕЙ-----
 
 //-----ИМПОРТИРУЕМЫЕ СТИЛИ---

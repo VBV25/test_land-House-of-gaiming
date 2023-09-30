@@ -27,6 +27,7 @@
   }
 
   &__social {
+    height: max-content;
     display: flex;
     flex-direction: column;
     gap: 1.0277vh;
@@ -36,16 +37,23 @@
     text-align: end;
   }
   &__social-group {
+    height: max-content;
     display: flex;
     justify-content: end;
-    gap: 0.4167vw;
+    column-gap: 0.4167vw;
   }
 
   &__social-link {
-    width: 1.7625vw;
-    height: 1.7625vw;
+    a {
+      display: block;
+      line-height: 0px;
+      width: max-content;
+      height: max-content;
+    }
     // background-color: $borderColorBlock;
     img {
+      width: 1.7625vw;
+      height: 1.7625vw;
       border-radius: 50%;
     }
   }

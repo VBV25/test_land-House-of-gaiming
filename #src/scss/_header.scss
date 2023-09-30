@@ -1,4 +1,7 @@
 .header {
+  position: relative;
+  z-index: 100;
+  width: 100%;
   color: $baseTextColor;
   &__wrapper {
     width: var(--widthContentWrapper);
@@ -56,6 +59,9 @@
       width: 0.8333vw;
     }
   }
+  &__content-mobile {
+    display: none;
+  }
   #signUp {
     background-color: $borderColorBlock;
     color: $baseTextColor;
@@ -63,6 +69,169 @@
     &:hover {
       background-color: $bgActiveBtn;
       color: $blogPreviewBgColor;
+    }
+  }
+}
+
+@media (orientation: portrait) {
+  .header {
+    position: sticky;
+    top: 0;
+    height: max-content;
+    color: $baseTextColor;
+    background-color: $documentBg;
+    &__wrapper {
+      width: var(--widthContentWrapper);
+      margin: 1.2648vh auto 0.3953vh;
+      padding: 1.9763vh 2.5vw;
+      border-radius: 20vw;
+      border: 2px solid $borderColorBlock;
+    }
+    //-----popup-menu----
+
+    &__content {
+      position: absolute;
+      z-index: 1000;
+      top: -1000%;
+      left: 0;
+      width: 100vw;
+      height: max-content;
+      padding: 0px 3vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      background-color: $documentBg;
+      transition: all 1s ease 0s;
+      overflow-y: scroll;
+    }
+    &__logo {
+      display: none;
+    }
+    &__nav {
+      margin-top: 30px;
+      height: max-content;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: start;
+      gap: 1vh;
+    }
+    &__link {
+      display: flex;
+      width: 100%;
+      min-width: max-content;
+      padding: 1.9763vh 6vw;
+      border-radius: 20vw;
+      border: 2px solid $borderColorBlock;
+      @include fontSize(18px, 120%, 400);
+    }
+    &__btn-group {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 1vh;
+    }
+
+    &__btn {
+      display: none;
+      min-width: max-content;
+      width: 100%;
+      padding: 1.11vh 0.73vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1.9763vh 2.5vw;
+      border-radius: 20vw;
+      border: 2px solid $borderColorBlock;
+      @include fontSize(18px, 120%, 400);
+      text-transform: uppercase;
+      background-color: $footerBgColor;
+    }
+    #language {
+      display: none;
+    }
+
+    //---MOBILE-BTN---
+    &__content-mobile {
+      display: flex;
+      justify-content: end;
+    }
+    &__mobile-btn-group {
+      display: flex;
+      width: max-content;
+      height: 100%;
+    }
+    #language-mobile {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 36px;
+      height: 36px;
+      border: 2px solid $borderBtnColor;
+      border-radius: 50%;
+      background-color: unset;
+      img {
+        width: 20px;
+      }
+    }
+    &__burger-btn {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &__burger-line {
+      position: relative;
+      width: 21px;
+      height: 3px;
+      background-color: $burgerBtn;
+      border-radius: 5px;
+      transition: height 0s ease 0.5s;
+      &:before,
+      &:after {
+        content: "";
+        position: absolute;
+        left: 0px;
+        width: 21px;
+        height: 3px;
+        background-color: $burgerBtn;
+        border-radius: 5px;
+        transform-origin: left;
+        transition: transform 1s ease 0s;
+      }
+      &:before {
+        top: -8px;
+      }
+      &:after {
+        bottom: -8px;
+      }
+    }
+    &__burger-btn.active &__burger-line {
+      height: 0;
+      transition: height 0s ease 0s !important;
+      &:before,
+      &:after {
+        left: 3px;
+      }
+      &:before {
+        top: -9px;
+        transform: rotate(45deg);
+      }
+      &:after {
+        bottom: -9px;
+        transform: rotate(-45deg);
+      }
+    }
+
+    #signUp {
+      background-color: $borderColorBlock;
+      color: $baseTextColor;
+      border-color: $borderColorBlock;
+      &:hover {
+        background-color: $bgActiveBtn;
+        color: $blogPreviewBgColor;
+      }
     }
   }
 }
