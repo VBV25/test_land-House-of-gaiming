@@ -37,6 +37,7 @@
   &__link {
     display: flex;
     min-width: max-content;
+    font-size: 0.8333vw;
     font-size: clamp(14px, 0.8333vw, 16px);
     font-weight: 400;
     line-height: 120%;
@@ -52,6 +53,7 @@
     align-items: center;
     flex-wrap: nowrap;
     gap: 0.5208vw;
+    font-size: 0.8333vw;
     font-size: clamp(14px, 0.8333vw, 16px);
     font-weight: 400;
     line-height: 120%;
@@ -135,7 +137,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: start;
-      gap: 1vh;
+      column-gap: 1vh;
     }
     &__link {
       display: flex;
