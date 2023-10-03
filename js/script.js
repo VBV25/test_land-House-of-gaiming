@@ -1,22 +1,30 @@
 //---------------Mobile menue-------------------
 const btnBurgerMenu = document.getElementById('btn-menu-burger');
 const navBlockHeader = document.getElementById('nav-block-header');
-let heightWindow = window.innerHeight;
-let widthWindow = window.innerWidth;
-let heightHeader = document.getElementById('header').offsetHeight;
+const bodyBlock = document.getElementById('body');
 
 function popupMenuHeight() {
+  let heightWindow = window.innerHeight;
+  let heightHeader = document.getElementById('header').offsetHeight;
+  let r = heightWindow - heightHeader
+
   if (navBlockHeader.classList.contains('active-mobile')) {
     navBlockHeader.style.top = heightHeader + 'px'
-    navBlockHeader.style.minHeight = heightWindow - heightHeader + 'px'
+    navBlockHeader.style.zIndex = '1000'
+    navBlockHeader.style.height = r + 'px'
   }
-  else { navBlockHeader.style.top = '' }
+  else {
+    navBlockHeader.style.top = heightWindow * -2 + 'px'
+    navBlockHeader.style.zIndex = ''
+  }
 }
 
 btnBurgerMenu.onclick = () => {
+  bodyBlock.classList.toggle('hidden')
   btnBurgerMenu.classList.toggle('active')
   navBlockHeader.classList.toggle('active-mobile')
   popupMenuHeight()
+  console.log(navBlockHeader.offsetHeight);
 }
 //----------------------------------------------
 
@@ -40,7 +48,6 @@ function cloneBlockImgString(numLine, direction) {
 }
 function baseFnTrackString(numLine, direction) {
   let lrdu = direction
-  let hWindow = window.innerHeight;
   let wWindow = window.innerWidth;
   let marqueMovement = $(numLine);
 
@@ -49,7 +56,7 @@ function baseFnTrackString(numLine, direction) {
   let widthBase
   let heightClone
   let widthClone
-  if (wWindow > hWindow) {
+  if (wWindow > 920) {
     flexDirect = 'column'
   }
   else {
@@ -60,7 +67,6 @@ function baseFnTrackString(numLine, direction) {
   marqueMovement.find('div').css({ 'flex-direction': flexDirect });
 
   const reset = function () {
-    hWindow = window.innerHeight;
     wWindow = window.innerWidth;
     let w
     let h
@@ -71,7 +77,7 @@ function baseFnTrackString(numLine, direction) {
       w = marqueMovement.find('span').width();
       h = marqueMovement.find('span').height()
     }
-    if (wWindow > hWindow) {
+    if (wWindow > 920) {
       heightBase = h//marqueMovement.find('span').height();
       widthBase = 0
       heightClone = heightBase * 2

@@ -1,6 +1,6 @@
 .blog {
   z-index: 5;
-  width: 27.6563vw;
+  width: 28.6563vw;
   height: 50.0356vh;
   display: flex;
   flex-direction: column;
@@ -19,16 +19,18 @@
   &__title {
     text-align: center;
     text-transform: uppercase;
-    margin-bottom: 1.1067vh;
-    @include fontSize(2.0833vw, 100%, 700);
+    margin-bottom: 19px;
+    font-size: clamp(32px, 2.0833vw, 40px);
+    line-height: 40px;
+    font-weight: 700;
   }
   &__preview-group-wrapper {
     position: relative;
     width: 100%;
-    height: 600px;
+    height: clamp(421px, 47.1308vh, 600px);
     display: flex;
     background-color: $bgColorBlogGroup;
-    border-width: 3px;
+    border-width: clamp(2px, 0.1563vw, 3px);
     border-color: $borderColorBlock;
     border-style: solid;
     border-radius: 5.21vw;
@@ -39,22 +41,23 @@
     box-sizing: content-box;
     position: relative;
     top: 0px;
-    //left: 1vw;
-    width: var(--previewGroup);
+    min-width: 90%;
+    width: max-content;
     height: max-content;
-    padding: 1.1858vh 0 1.1858vh 1.2vw;
+    padding: clamp(8px, 3%, 15px) 0 clamp(5px, 0.8vh, 15px) clamp(5px, 0.5vw, 20px);
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 10px;
   }
 
   &__preview {
-    width: 100%;
+    width: clamp(150px, 24.323vw, 467px);
     padding: 1.2648vh 3.3333vw;
     display: flex;
     flex-direction: column;
     gap: 0.9486vh;
-    border-radius: 110.21vw;
+    border-radius: 5.21vw;
     background-color: $blogPreviewBgColor;
     &:hover {
       color: $baseTextColor;
@@ -63,28 +66,51 @@
   }
 
   &__text {
-    @include fontSize(1.25vw, 117%, 400);
+    font-size: clamp(16px, 1.25vw, 24px);
+    line-height: 117%;
+    font-weight: 500;
   }
 
   &__data {
-    @include fontSize(0.73vw, 114%, 600);
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 300;
+    opacity: 0.6;
   }
   /*---скролл-бар---*/
   &__progressbar {
-    height: 60%;
-    width: 8px;
-    background: $bgScrollBarColor;
+    height: 70%;
+    min-width: 23px;
+    max-width: 40px;
+    width: 10%;
+    margin: 0px;
     position: sticky;
-    top: 20%;
-    left: 96%;
+    display: flex;
+    justify-content: center;
+    z-index: 50;
+    top: 15%;
     overflow: hidden;
-    border-radius: 10px;
+
+    &:before {
+      content: "";
+      position: absolute;
+      z-index: 50;
+      top: 0;
+      left: 50%;
+      margin-left: -4px;
+      width: 8px;
+      height: 100%;
+      background: $bgScrollBarColor;
+      border-radius: 10px;
+    }
   }
   &__progressbar-line {
     position: absolute;
     z-index: 1000;
+    left: 50%;
+    margin-left: -4px;
     background-color: $borderColorBlock;
-    width: 100%;
+    width: 8px;
     border-radius: 10px;
     border: 2px solid $borderColorBlock;
     touch-action: none;
@@ -94,105 +120,66 @@
   }
 }
 
-@media (orientation: portrait) {
+@media (max-width: 920px) {
   .blog {
-    z-index: 5;
-    width: 27.6563vw;
-    height: 50.0356vh;
-    display: flex;
-    flex-direction: column;
-    color: $baseTextColor;
+    width: var(--widthContentWrapper);
+    height: max-content;
+    margin: auto;
+    padding: 30px 0px 120px;
     &::before {
-      display: none;
       z-index: -5;
-      //content: "";
+      content: "";
       position: absolute;
-      bottom: -25%;
-      right: -10%;
+      bottom: 25%;
+      right: 10%;
       width: 0px;
       height: 0px;
       border-radius: 50%;
-      // box-shadow: 0px 0px 200px 450px #478bf93c;
-    }
-    &__title {
-      text-align: center;
-      text-transform: uppercase;
-      margin-bottom: 1.1067vh;
-      @include fontSize(2.0833vw, 100%, 700);
+      box-shadow: 0px 0px 100px 150px #478bf93c;
     }
     &__preview-group-wrapper {
-      position: relative;
-      width: 100%;
-      height: 600px;
-      display: flex;
-      background-color: $bgColorBlogGroup;
-      border-width: 3px;
-      border-color: $borderColorBlock;
-      border-style: solid;
-      border-radius: 5.21vw;
-      overflow-y: scroll;
-      overflow-x: hidden;
+      height: clamp(421px, 70vh, 600px);
+      border-radius: clamp(50px, 15vw, 75px);
     }
     &__preview-group {
-      box-sizing: content-box;
-      position: relative;
-      top: 0px;
-      //left: 1vw;
-      width: var(--previewGroup);
-      height: max-content;
-      padding: 1.1858vh 0 1.1858vh 1.2vw;
-      display: flex;
-      flex-direction: column;
+      padding: clamp(10px, 1.7vh, 50px) 0px clamp(10px, 1.7vh, 50px) clamp(10px, 3vw, 50px);
       gap: 10px;
     }
-
     &__preview {
-      width: 100%;
-      padding: 1.2648vh 3.3333vw;
-      display: flex;
-      flex-direction: column;
-      gap: 0.9486vh;
-      border-radius: 110.21vw;
-      background-color: $blogPreviewBgColor;
-      &:hover {
-        color: $baseTextColor;
-        background-color: $focusTextColor;
-      }
+      width: clamp(274px, 84vw, 800px);
+      padding: 16px 9%;
+      border-radius: 12.5vw;
     }
-
     &__text {
-      @include fontSize(1.25vw, 117%, 400);
+      display: block;
+      width: clamp(204px, 63.75vw, 400px);
+      font-size: clamp(16px, 5vw, 24px);
+      line-height: 117%;
+      font-weight: 500;
     }
 
     &__data {
-      @include fontSize(0.73vw, 114%, 600);
+      display: block;
+      width: 204px;
     }
+
     /*---скролл-бар---*/
     &__progressbar {
-      height: 60%;
-      width: 8px;
-      background: $bgScrollBarColor;
-      position: sticky;
-      top: 20%;
-      left: 96%;
-      overflow: hidden;
-      border-radius: 10px;
+      height: 64%;
+      top: 18%;
+      &:before {
+        width: 4px;
+        margin-left: -2px;
+      }
     }
     &__progressbar-line {
-      position: absolute;
-      z-index: 1000;
-      background-color: $borderColorBlock;
-      width: 100%;
-      border-radius: 10px;
-      border: 2px solid $borderColorBlock;
-      touch-action: none;
-      &:hover {
-        filter: invert(20%) sepia(2%) saturate(11%) hue-rotate(320deg) brightness(89%) contrast(86%);
-      }
+      width: 4px;
+      margin-left: -2px;
     }
   }
 }
 
+//----прячем скролл---
 .blog__preview-group-wrapper::-webkit-scrollbar {
   width: 0px;
 }

@@ -81,7 +81,7 @@
   display: flex;
 }
 
-@media (orientation: portrait) {
+@media (max-width: 920px) {
   .horizontal-ticker,
   .vertical-ticker {
     width: 100%;
@@ -89,7 +89,7 @@
     overflow: hidden;
 
     &__container {
-      width: 100vw;
+      width: 100%;
       height: max-content;
       flex-direction: column;
       overflow: hidden;
@@ -107,9 +107,9 @@
         height: max-content;
         flex-direction: row;
         img {
-          margin: 10px;
-          width: 15.625vw;
-          height: auto;
+          margin: 5px;
+          height: 48px;
+          width: auto;
         }
       }
       &:before {
@@ -117,26 +117,19 @@
         position: absolute;
         bottom: 0;
         left: 0;
-        width: 100%;
+        width: 0%;
         height: 0;
-        box-shadow: 0px 0px 90px 100px $footerBgColor;
+        box-shadow: unset;
       }
     }
     &__first {
-      opacity: 1;
+      opacity: 0.4;
     }
     &__second {
       opacity: 0.7;
-
-      &:before {
-        box-shadow: 0px 0px 100px 70px $footerBgColor;
-      }
     }
     &__third {
-      opacity: 0.4;
-      &:before {
-        box-shadow: 0px 0px 90px 70px $footerBgColor;
-      }
+      opacity: 0.2;
     }
   }
   .ticker-img-group {

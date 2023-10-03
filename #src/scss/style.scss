@@ -4,7 +4,6 @@
 //---переменные---
 :root {
   --widthContentWrapper: 85.42%;
-  --previewGroup: 24.323vw;
 }
 $documentBg: #110a1d;
 $baseTextColor: #ffffff;
@@ -70,31 +69,41 @@ img {
   width: 100%;
   height: auto;
 }
+.hidden {
+  overflow: hidden;
+}
 
 //---медиа---
-@media (orientation: portrait) {
+@media (max-width: 920px) {
   :root {
     --widthContentWrapper: 94vw;
-    //--previewGroup: 24.323vw;
   }
+
   body {
     height: max-content !important;
     display: block;
     overflow: unset;
+    overflow-x: hidden;
   }
 
   .main {
     height: max-content;
     align-self: start;
-
+    max-width: 100vw;
     &__wrapper {
+      width: 100%;
       height: max-content;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      margin: auto;
+      margin: 0;
     }
+  }
+}
+@media (orientation: landscape) and (max-width: 10240px) {
+  :root {
+    --widthContentWrapper: 92%;
   }
 }
 /*
@@ -167,3 +176,10 @@ button:hover {
 @import "start-page-main-section/hero";
 @import "start-page-main-section/ticker";
 @import "start-page-main-section/blog";
+
+body::-webkit-scrollbar {
+  width: 0px;
+}
+#nav-block-header::-webkit-scrollbar {
+  width: 0px;
+}

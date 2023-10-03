@@ -17,8 +17,15 @@ function gettingВimensionsBlockFn() {
   heightBlogPrewGroupWrapper = blogPreviewGroupWrapper.offsetHeight
   //высота списка блогов
   fullHeightBlogList = blogPreviewGroup.offsetHeight
-}
 
+}
+function scrollbarVisible() {
+  let blogWindowHeight = blogPreviewGroupWrapper.offsetHeight
+  let blogListHeight = blogPreviewGroup.offsetHeight
+  if (blogWindowHeight >= blogListHeight) {
+    blogProgressbar.style.display = 'none'
+  } else { blogProgressbar.style.display = '' }
+}
 //высчитываем процентное соотношение списка блогов относительно видимой части и делаем высоту скроллтрекера относительной этому соотношению
 let yLine
 let percentBlogVisible
@@ -71,6 +78,12 @@ let startPositionLineProgressbar = 0
 let topLine
 let yMouse
 let xMouse
+blogProgressbar.onmousemove = () => {
+  newPositionProgressbarLine()
+}
+blogProgressbar.onpointermove = () => {
+  newPositionProgressbarLine()
+}
 function onMouseMove(event) {
   topLine = +blogProgressbarLine.style.top.replace(/[a-zA-Z]/gi, '');
   newPositionProgressbarLine()
@@ -191,6 +204,7 @@ window.onpointerdown = function (event) {
 
 //----ВЫЗОВ ФУНКЦИЙ---
 window.onload = function () {
+  scrollbarVisible()
   gettingВimensionsBlockFn()
   percentBlogVisibleOrListFn()
 };

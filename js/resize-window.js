@@ -3,6 +3,7 @@ $(window).resize(function () {
   heightWindow = window.innerHeight;
   widthWindow = window.innerWidth;
 
+  scrollbarVisible()
   gettingВimensionsBlockFn()
   percentBlogVisibleOrListFn()
   popupMenuHeight()
