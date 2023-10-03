@@ -1046,7 +1046,8 @@ button:hover {
     border-style: solid;
     border-radius: 5.21vw;
     overflow-y: scroll;
-    overflow-x: hidden; }
+    overflow-x: hidden;
+    scrollbar-width: none; }
   .blog__preview-group {
     -webkit-box-sizing: content-box;
     box-sizing: content-box;
