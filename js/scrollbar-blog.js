@@ -145,8 +145,7 @@ blogPreviewGroupWrapper.addEventListener('scroll', () => {
 })
 //-----------------------------------------
 
-blogProgressbarLine.onmousedown = () => {
-  console.log('555');
+blogProgressbarLine.onmouseover = () => {
   newPositionProgressbarLine()
   collisionLineScrollbar()
 }

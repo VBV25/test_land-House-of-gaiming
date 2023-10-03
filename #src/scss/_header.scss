@@ -15,7 +15,8 @@
   &__content {
     width: 100%;
     height: 100%;
-    display: flex;
+    display: grid;
+    grid-auto-flow: column;
     justify-content: space-between;
   }
 
@@ -29,28 +30,29 @@
     }
   }
   &__nav {
-    display: flex;
+    display: grid;
+    grid-auto-flow: column;
     justify-content: center;
-    align-items: center;
-    gap: 1.67vw;
+    align-content: center;
+    grid-gap: 1.67vw;
   }
   &__link {
-    display: flex;
-    min-width: max-content;
     font-size: 0.8333vw;
     font-size: clamp(14px, 0.8333vw, 16px);
     font-weight: 400;
     line-height: 120%;
   }
   &__btn-group {
-    display: flex;
-    gap: 0.73vw;
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 0.73vw;
   }
   &__btn {
     min-width: max-content;
     padding: 1.11vh 0.73vw;
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-auto-flow: column;
+    align-content: center;
     flex-wrap: nowrap;
     gap: 0.5208vw;
     font-size: 0.8333vw;
@@ -63,6 +65,7 @@
     border: 2px solid $borderBtnColor;
     border-radius: 24px;
     img {
+      min-width: 15px;
       width: 0.8333vw;
     }
   }
@@ -79,11 +82,17 @@
     }
   }
 }
-@media (orientation: landscape) and (max-width: 1024px) {
+@media (max-width: 1065px) {
   .header {
     &__logo {
       width: 10vw;
-      opacity: 0;
+    }
+  }
+}
+@media (max-width: 1000px) {
+  .header {
+    &__logo {
+      width: max-content;
     }
   }
 }
@@ -114,7 +123,8 @@
       width: 100vw;
       height: max-content;
       padding: 0px 3vw 100px;
-      flex-direction: column;
+      grid-auto-flow: row;
+      grid-template-columns: 1fr;
       justify-content: start;
       background-color: $documentBg;
       transition: all 1s ease 0s;
@@ -126,13 +136,13 @@
     &__nav {
       margin-top: 30px;
       height: max-content;
-      flex-direction: column;
-      justify-content: center;
-      align-items: start;
-      column-gap: 1vh;
+      grid-auto-flow: row;
+      grid-template-columns: 100%;
+      justify-content: start;
+      align-content: start;
+      grid-gap: 1vh;
     }
     &__link {
-      display: flex;
       width: 100%;
       min-width: max-content;
       padding: 1.9763vh 6vw;
@@ -142,15 +152,16 @@
     }
     &__btn-group {
       margin-top: 30px;
-      display: flex;
-      flex-direction: column;
-      gap: 1vh;
+      grid-auto-flow: row;
+      grid-template-rows: repeat(2, max-content);
+      grid-gap: 1vh;
     }
 
     &__btn {
       display: none;
       min-width: max-content;
       width: 100%;
+      height: max-content;
       padding: 1.11vh 0.73vw;
       display: flex;
       justify-content: center;
@@ -168,24 +179,20 @@
 
     //---MOBILE-BTN---
     &__content-mobile {
-      display: -webkit-flex;
-      display: flex;
-      -webkit-align-items: center;
-      align-items: center;
-      -webkit-justify-content: flex-end;
-      justify-content: flex-end;
+      display: grid;
+      align-content: center;
+      justify-content: end;
     }
     &__mobile-btn-group {
-      display: flex;
-      // margin: 0px 0px 0px auto;
-      border: 2px solid rgb(0, 255, 38);
+      display: grid;
+      grid-auto-flow: column;
       width: max-content;
       height: 100%;
     }
     #language-mobile {
-      display: flex;
+      display: grid;
       justify-content: center;
-      align-items: center;
+      align-content: center;
       width: 36px;
       height: 36px;
       border: 2px solid $borderBtnColor;
