@@ -40,7 +40,6 @@ let percentBlogListScroll
 let bottomPositionPreviewGroupWrapper
 let bottomPositionPreviewGroup
 let maxTopPositionLineProgressbar
-let maxBottomPositionPreviewGroupStart
 let topPositionScrollTracker
 let r
 let q
@@ -80,7 +79,6 @@ let xMouse
 function onMouseMove(event) {
   newPositionProgressbarLine()
   topLine = +blogProgressbarLine.style.top.replace(/[a-zA-Z]/gi, '');
-
   if (botomPositionProgressbar >= botomPositionProgressbarLine && 0 <= topLine) {
     //перемещение трекера скролл бара
     let oldY = yMouse
@@ -89,8 +87,6 @@ function onMouseMove(event) {
     startPositionLineProgressbar = startPositionLineProgressbar + rr
     blogProgressbarLine.style.top = startPositionLineProgressbar + 'px';
     yMouse = newY
-    console.log(startPositionLineProgressbar);
-
     //---перемещение блока с контентом связанным со скролл баром
     //получаем процент смещения прогресс бара
     percentBlogListScrollFn()
@@ -123,11 +119,8 @@ function collisionLineScrollbar() {
   let topLine = +blogProgressbarLine.style.top.replace(/[a-zA-Z]/gi, '');
   let heightProgressbar = window.getComputedStyle(blogProgressbar).height.replace(/[a-zA-Z]/gi, '');
   let heightProgressbarLine = window.getComputedStyle(blogProgressbarLine).height.replace(/[a-zA-Z]/gi, '');
-
   if (topLine <= 0) {
-    blogProgressbarLine.style.top = 0 + 'px'
-    startPositionLineProgressbar = 1
-
+    blogProgressbarLine.style.top = 1 + 'px'
   }
   if (botomPositionProgressbar <= botomPositionProgressbarLine) {
     blogProgressbarLine.style.top = heightProgressbar - heightProgressbarLine + 'px'
@@ -146,6 +139,10 @@ blogPreviewGroupWrapper.addEventListener('scroll', () => {
 //-----------------------------------------
 
 blogProgressbarLine.onmouseover = () => {
+  newPositionProgressbarLine()
+  collisionLineScrollbar()
+}
+blogProgressbarLine.onpointerdown = () => {
   newPositionProgressbarLine()
   collisionLineScrollbar()
 }
@@ -204,15 +201,6 @@ window.onpointerdown = function (event) {
     };
   }
 };
-
-window.onmousemove = () => {
-  newPositionProgressbarLine()
-}
-window.onpointermove = () => {
-  newPositionProgressbarLine()
-  bottomPositionPreviewGroupWrapper = Math.trunc(blogPreviewGroupWrapper.getBoundingClientRect().bottom)
-  bottomPositionPreviewGroup = Math.trunc(blogPreviewGroup.getBoundingClientRect().bottom)
-}
 
 //----ВЫЗОВ ФУНКЦИЙ---
 window.onload = function () {

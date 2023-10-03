@@ -190,9 +190,9 @@
       height: 100%;
     }
     #language-mobile {
-      display: grid;
+      display: flex;
       justify-content: center;
-      align-content: center;
+      align-items: center;
       width: 36px;
       height: 36px;
       border: 2px solid $borderBtnColor;
