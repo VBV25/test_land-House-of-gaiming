@@ -78,12 +78,6 @@ let startPositionLineProgressbar = 0
 let topLine
 let yMouse
 let xMouse
-blogProgressbar.onmousemove = () => {
-  newPositionProgressbarLine()
-}
-blogProgressbar.onpointermove = () => {
-  newPositionProgressbarLine()
-}
 function onMouseMove(event) {
   topLine = +blogProgressbarLine.style.top.replace(/[a-zA-Z]/gi, '');
   newPositionProgressbarLine()
@@ -201,6 +195,14 @@ window.onpointerdown = function (event) {
   }
 };
 
+window.onmousemove = () => {
+  newPositionProgressbarLine()
+
+}
+window.onpointermove = () => {
+  newPositionProgressbarLine()
+
+}
 
 //----ВЫЗОВ ФУНКЦИЙ---
 window.onload = function () {

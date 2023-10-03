@@ -112,9 +112,15 @@
       width: 100vw;
       height: max-content;
       padding: 0px 3vw 100px;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flex;
       display: flex;
+
       flex-direction: column;
+      -o-flex-direction: column;
       justify-content: start;
+      -o-justify-content: start;
       background-color: $documentBg;
       transition: all 1s ease 0s;
       overflow-y: scroll;

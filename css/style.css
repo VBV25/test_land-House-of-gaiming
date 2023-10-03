@@ -334,6 +334,9 @@ button:hover {
       height: -moz-max-content;
       height: max-content;
       padding: 0px 3vw 100px;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flex;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -341,9 +344,11 @@ button:hover {
       -webkit-box-direction: normal;
       -ms-flex-direction: column;
       flex-direction: column;
+      -o-flex-direction: column;
       -webkit-box-pack: start;
       -ms-flex-pack: start;
       justify-content: start;
+      -o-justify-content: start;
       background-color: #110a1d;
       -webkit-transition: all 1s ease 0s;
       -o-transition: all 1s ease 0s;
