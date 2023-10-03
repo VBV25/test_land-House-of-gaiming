@@ -229,10 +229,16 @@ button:hover {
   .header__content {
     width: 100%;
     height: 100%;
+    display: -webkit-flex;
     display: -webkit-box;
+    display: -moz-flex;
+    display: -moz-box;
     display: -ms-flexbox;
+    display: -ms-flex;
+    display: -o-flex;
     display: flex;
     -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
     justify-content: space-between; }
   .header__logo {
@@ -243,8 +249,13 @@ button:hover {
       height: 100%;
       cursor: pointer; }
   .header__nav {
+    display: -webkit-flex;
     display: -webkit-box;
+    display: -moz-flex;
+    display: -moz-box;
     display: -ms-flexbox;
+    display: -ms-flex;
+    display: -o-flex;
     display: flex;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
@@ -304,7 +315,7 @@ button:hover {
       background-color: #ffffffcc;
       color: #1e1231; }
 
-@media (orientation: landscape) and (max-width: 10240px) {
+@media (orientation: landscape) and (max-width: 1024px) {
   .header__logo {
     width: 10vw;
     opacity: 0; } }
@@ -338,21 +349,17 @@ button:hover {
       height: -moz-max-content;
       height: max-content;
       padding: 0px 3vw 100px;
-      display: -webkit-flex;
-      display: -moz-flex;
-      display: -ms-flex;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
+      -o-flex-direction: column;
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
       -ms-flex-direction: column;
       flex-direction: column;
-      -o-flex-direction: column;
+      -o-justify-content: start;
       -webkit-box-pack: start;
+      -webkit-justify-content: start;
       -ms-flex-pack: start;
       justify-content: start;
-      -o-justify-content: start;
       background-color: #110a1d;
       -webkit-transition: all 1s ease 0s;
       -o-transition: all 1s ease 0s;
@@ -365,21 +372,22 @@ button:hover {
       height: -webkit-max-content;
       height: -moz-max-content;
       height: max-content;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
+      -o-flex-direction: column;
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
       -ms-flex-direction: column;
       flex-direction: column;
+      -o-justify-content: center;
       -webkit-box-pack: center;
+      -webkit-justify-content: center;
       -ms-flex-pack: center;
       justify-content: center;
       -webkit-box-align: start;
+      -webkit-align-items: start;
       -ms-flex-align: start;
       align-items: start;
-      -webkit-column-gap: 1vh;
-      column-gap: 1vh; }
+      gap: 1vh; }
     .header__link {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -433,15 +441,27 @@ button:hover {
     .header #language {
       display: none; }
     .header__content-mobile {
+      display: -webkit-flex;
       display: -webkit-box;
+      display: -moz-flex;
+      display: -moz-box;
       display: -ms-flexbox;
+      display: -ms-flex;
+      display: -o-flex;
       display: flex;
+      -o-justify-content: end;
       -webkit-box-pack: end;
+      -webkit-justify-content: end;
       -ms-flex-pack: end;
       justify-content: end; }
     .header__mobile-btn-group {
+      display: -webkit-flex;
       display: -webkit-box;
+      display: -moz-flex;
+      display: -moz-box;
       display: -ms-flexbox;
+      display: -ms-flex;
+      display: -o-flex;
       display: flex;
       width: -webkit-max-content;
       width: -moz-max-content;
