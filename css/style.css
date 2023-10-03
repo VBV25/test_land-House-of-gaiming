@@ -463,6 +463,8 @@ button:hover {
       display: -ms-flex;
       display: -o-flex;
       display: flex;
+      margin: 0px 0px 0px auto;
+      border: 2px solid red;
       width: -webkit-max-content;
       width: -moz-max-content;
       width: max-content;

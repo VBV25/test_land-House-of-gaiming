@@ -197,11 +197,9 @@ window.onpointerdown = function (event) {
 
 window.onmousemove = () => {
   newPositionProgressbarLine()
-
 }
 window.onpointermove = () => {
   newPositionProgressbarLine()
-
 }
 
 //----ВЫЗОВ ФУНКЦИЙ---
