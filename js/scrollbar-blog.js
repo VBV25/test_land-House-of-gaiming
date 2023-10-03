@@ -78,8 +78,9 @@ let topLine
 let yMouse
 let xMouse
 function onMouseMove(event) {
-  topLine = +blogProgressbarLine.style.top.replace(/[a-zA-Z]/gi, '');
   newPositionProgressbarLine()
+  topLine = +blogProgressbarLine.style.top.replace(/[a-zA-Z]/gi, '');
+
   if (botomPositionProgressbar >= botomPositionProgressbarLine && 0 <= topLine) {
     //перемещение трекера скролл бара
     let oldY = yMouse
@@ -88,6 +89,8 @@ function onMouseMove(event) {
     startPositionLineProgressbar = startPositionLineProgressbar + rr
     blogProgressbarLine.style.top = startPositionLineProgressbar + 'px';
     yMouse = newY
+    console.log(startPositionLineProgressbar);
+
     //---перемещение блока с контентом связанным со скролл баром
     //получаем процент смещения прогресс бара
     percentBlogListScrollFn()
@@ -100,6 +103,10 @@ function onMouseMove(event) {
       top: scrollBlockContextBlogGroup,
       left: 0,
     })
+  }
+  else {
+    collisionLineScrollbar()
+    newPositionProgressbarLine()
   }
 }
 function returnMouseMove(event) {
@@ -116,24 +123,21 @@ function collisionLineScrollbar() {
   let topLine = +blogProgressbarLine.style.top.replace(/[a-zA-Z]/gi, '');
   let heightProgressbar = window.getComputedStyle(blogProgressbar).height.replace(/[a-zA-Z]/gi, '');
   let heightProgressbarLine = window.getComputedStyle(blogProgressbarLine).height.replace(/[a-zA-Z]/gi, '');
-  if (topLine <= 1) {
+
+  if (topLine <= 0) {
     blogProgressbarLine.style.top = 0 + 'px'
-    startPositionLineProgressbar = 0
-    newPositionProgressbarLine()
+    startPositionLineProgressbar = 1
+
   }
   if (botomPositionProgressbar <= botomPositionProgressbarLine) {
     blogProgressbarLine.style.top = heightProgressbar - heightProgressbarLine + 'px'
     startPositionLineProgressbar = heightProgressbar - heightProgressbarLine
-    newPositionProgressbarLine()
   }
+  newPositionProgressbarLine()
 }
 
 //----синхронизация скроллбара кастомного------
 //-------- с прокручиваемым блоком-------
-document.addEventListener('scroll', () => {
-  let bottomPositionPreviewGroupWrapper = Math.trunc(blogPreviewGroupWrapper.getBoundingClientRect().bottom)
-  let bottomPositionPreviewGroup = Math.trunc(blogPreviewGroup.getBoundingClientRect().bottom)
-})
 blogPreviewGroupWrapper.addEventListener('scroll', () => {
   gettingВimensionsBlockFn()
   percentBlogListScrollFn()
@@ -141,6 +145,11 @@ blogPreviewGroupWrapper.addEventListener('scroll', () => {
 })
 //-----------------------------------------
 
+blogProgressbarLine.onmousedown = () => {
+  console.log('555');
+  newPositionProgressbarLine()
+  collisionLineScrollbar()
+}
 
 //----------функция драгон дроп--------
 window.onmousedown = function (event) {
@@ -202,6 +211,8 @@ window.onmousemove = () => {
 }
 window.onpointermove = () => {
   newPositionProgressbarLine()
+  bottomPositionPreviewGroupWrapper = Math.trunc(blogPreviewGroupWrapper.getBoundingClientRect().bottom)
+  bottomPositionPreviewGroup = Math.trunc(blogPreviewGroup.getBoundingClientRect().bottom)
 }
 
 //----ВЫЗОВ ФУНКЦИЙ---

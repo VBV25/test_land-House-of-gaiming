@@ -1012,13 +1012,8 @@ button:hover {
   z-index: 5;
   width: 28.6563vw;
   height: 50.0356vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  display: -ms-grid;
+  display: grid;
   color: #ffffff;
   /*---скролл-бар---*/ }
   .blog::before {
@@ -1045,9 +1040,18 @@ button:hover {
     width: 100%;
     height: 47.1308vh;
     height: clamp(421px, 47.1308vh, 600px);
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    display: -ms-grid;
+    display: grid;
+    grid-auto-flow: column;
+    -ms-grid-columns: -webkit-max-content 1fr;
+    -ms-grid-columns: max-content 1fr;
+    grid-template-columns: -webkit-max-content 1fr;
+    grid-template-columns: max-content 1fr;
+    -ms-grid-rows: 100%;
+    grid-template-rows: 100%;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     background-color: #36344a;
     border-width: 3px;
     border-width: clamp(2px, 0.1563vw, 3px);
@@ -1070,19 +1074,13 @@ button:hover {
     height: -webkit-max-content;
     height: -moz-max-content;
     height: max-content;
-    padding: 3% 0px 0.8vh 0.5vw;
-    padding: clamp(8px, 3%, 15px) 0px clamp(5px, 0.8vh, 15px) clamp(5px, 0.5vw, 20px);
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    gap: 10px; }
+    padding: 3% 0px 0.8vh 1vw;
+    padding: clamp(8px, 3%, 15px) 0px clamp(5px, 0.8vh, 15px) clamp(5px, 1vw, 20px);
+    display: -ms-grid;
+    display: grid;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    grid-gap: 10px; }
   .blog__preview {
     width: 24.323vw;
     width: clamp(150px, 24.323vw, 467px);
@@ -1113,8 +1111,7 @@ button:hover {
   .blog__progressbar {
     height: 70%;
     min-width: 23px;
-    max-width: 40px;
-    width: 10%;
+    width: 100%;
     margin: 0px;
     position: -webkit-sticky;
     position: sticky;
@@ -1231,10 +1228,7 @@ body::-webkit-scrollbar {
 .qwerty {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (-webkit-max-content)[3];
-  -ms-grid-columns: (max-content)[3];
-  grid-template-columns: repeat(3, -webkit-max-content);
-  grid-template-columns: repeat(3, max-content);
+  grid-auto-flow: column;
   grid-column-gap: 3vw; }
   .qwerty div {
     border: 2px solid red;

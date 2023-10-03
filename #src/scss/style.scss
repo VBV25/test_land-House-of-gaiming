@@ -188,7 +188,7 @@ body::-webkit-scrollbar {
 
 .qwerty {
   display: grid;
-  grid-template-columns: repeat(3, max-content);
+  grid-auto-flow: column;
   grid-column-gap: 3vw;
   div {
     border: 2px solid red;
