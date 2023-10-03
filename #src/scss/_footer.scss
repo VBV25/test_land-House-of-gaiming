@@ -104,7 +104,11 @@
     }
     &__social-group {
       justify-content: start;
+      -moz-column-gap: 2.8125vw;
+      -o-column-gap: 2.8125vw;
+      -webkit-column-gap: 2.8125vw;
       column-gap: 2.8125vw;
+      border: 2px solid red;
     }
 
     &__social-link {
