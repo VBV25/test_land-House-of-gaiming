@@ -43,8 +43,8 @@ function cloneBlockImgString(numLine, direction) {
   if (direction == 1) { marquee.prepend(marquee.find('span').clone()); }
   if (direction == -1) { marquee.append(marquee.find('span').clone()); }
   marquee.wrapInner('<div>');
-  marquee.find('span').css({ width: 'max-content', height: 'max-content', display: 'flex' });
-  marquee.find('div').css({ display: 'flex' });
+  marquee.find('span').css({ width: 'max-content', height: 'max-content', display: 'grid' });
+  marquee.find('div').css({ display: 'grid' });
 }
 function baseFnTrackString(numLine, direction) {
   let lrdu = direction
@@ -57,14 +57,14 @@ function baseFnTrackString(numLine, direction) {
   let heightClone
   let widthClone
   if (wWindow > 920) {
-    flexDirect = 'column'
-  }
-  else {
     flexDirect = 'row'
   }
+  else {
+    flexDirect = 'column'
+  }
 
-  marqueMovement.find('span').css({ 'flex-direction': flexDirect });
-  marqueMovement.find('div').css({ 'flex-direction': flexDirect });
+  marqueMovement.find('span').css({ 'grid-auto-flow': flexDirect });
+  marqueMovement.find('div').css({ 'grid-auto-flow': flexDirect });
 
   const reset = function () {
     wWindow = window.innerWidth;
