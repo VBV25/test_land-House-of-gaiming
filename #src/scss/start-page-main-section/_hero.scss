@@ -41,7 +41,8 @@
   }
 
   &__btn {
-    width: 20.4688vw;
+    width: clamp(280px, 20.4688vw, 393px);
+    padding: 0px 3.39vw;
     height: 5.9617vh;
     background-color: $heroBtnBg;
     color: $baseTextColor;

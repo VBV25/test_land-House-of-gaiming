@@ -22,7 +22,12 @@ let translateList = [
   ['Cookies', 'Куки'],
   ['Contacts', 'Контакты'],
   ['Careers', 'Карьера'],
-  ['Brand Guide', 'Бренд-гид']
+  ['Brand Guide', 'Бренд-гид'],
+  ['The Dutch driver became the youngest «Formula 1» Grand Prix champion.', 'Голландский пилот стал самым молодым чемпионом Гран-при «Формулы-1».'],
+  ['How a military pilot set a record in English football and became a national team legend.', 'Как военный летчик установил рекорд в английском футболе и стал легендой сборной.'],
+  ['An American basketball player was kicked out of his home at the age of 13. How did he become an NBA star?', 'Американского баскетболиста в 13 лет выгнали из дома. Как он стал звездой НБА?'],
+  ["Huge prize money, a spectacular show and sporting innovations. How the US Open became the world's premier tennis tournament.", 'Огромные призовые, яркое шоу и спортивные новшества. Как US Open стал главным теннисным турниром мира.'],
+  ['How did an athlete with a heart condition become the best cyclist in the world and why was he called a cannibal?', 'Как спортсмен с больным сердцем стал лучшим велогонщиком мира и за что его прозвали каннибалом?']
 ]
 
 function translateBlockFn(baseArr) {
