@@ -1191,6 +1191,9 @@ button:hover {
       border-radius: 50%;
       -webkit-box-shadow: 0px 0px 100px 150px #478bf93c;
       box-shadow: 0px 0px 100px 150px #478bf93c; }
+    .blog__title {
+      font-size: 2.0833vw;
+      font-size: clamp(32px, 10vw, 40px); }
     .blog__preview-group-wrapper {
       height: 60vh;
       height: clamp(421px, 70vh, 600px);
@@ -1199,7 +1202,7 @@ button:hover {
     .blog__preview-group {
       padding: 1.7vh 0px 1.7vh 3vw;
       padding: clamp(10px, 1.7vh, 50px) 0px clamp(10px, 1.7vh, 50px) clamp(10px, 3vw, 50px);
-      gap: 10px; }
+      row-gap: 10px; }
     .blog__preview {
       width: 84vw;
       width: clamp(274px, 84vw, 800px);
