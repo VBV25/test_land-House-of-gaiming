@@ -24,6 +24,7 @@
   &__link {
     display: flex;
     align-items: end;
+    font-size: 0.8333vw;
     font-size: clamp(14px, 0.8333vw, 16px);
     line-height: 20px;
     font-weight: 400;
@@ -36,6 +37,7 @@
     gap: 1.0277vh;
   }
   &__social-title {
+    font-size: 0.8333vw;
     font-size: clamp(14px, 0.8333vw, 16px);
     line-height: 20px;
     font-weight: 400;
@@ -66,6 +68,7 @@
 @media (max-width: 920px) {
   .footer {
     padding: 20px 0vw 30px;
+    border-radius: 15.625vw 15.625vw 0px 0px;
     border-radius: clamp(50px, 15.625vw, 64px) clamp(50px, 15.625vw, 64px) 0px 0px;
     border-width: 2px 2px 0px 2px;
 
@@ -84,6 +87,7 @@
     &__link {
       display: flex;
       align-items: end;
+      font-size: 4.375vw;
       font-size: clamp(14px, 4.375vw, 18px);
     }
 
@@ -94,6 +98,7 @@
       gap: 10px;
     }
     &__social-title {
+      font-size: 4.375vw;
       font-size: clamp(14px, 4.375vw, 18px);
       text-align: start;
     }
@@ -105,6 +110,7 @@
     &__social-link {
       justify-content: start;
       img {
+        width: 8.4375vw;
         width: clamp(27px, 8.4375vw, 60px);
         height: auto;
         border-radius: 50%;

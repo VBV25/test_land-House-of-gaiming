@@ -229,16 +229,10 @@ button:hover {
   .header__content {
     width: 100%;
     height: 100%;
-    display: -webkit-flex;
     display: -webkit-box;
-    display: -moz-flex;
-    display: -moz-box;
     display: -ms-flexbox;
-    display: -ms-flex;
-    display: -o-flex;
     display: flex;
     -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
     justify-content: space-between; }
   .header__logo {
@@ -249,13 +243,8 @@ button:hover {
       height: 100%;
       cursor: pointer; }
   .header__nav {
-    display: -webkit-flex;
     display: -webkit-box;
-    display: -moz-flex;
-    display: -moz-box;
     display: -ms-flexbox;
-    display: -ms-flex;
-    display: -o-flex;
     display: flex;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
@@ -349,15 +338,11 @@ button:hover {
       height: -moz-max-content;
       height: max-content;
       padding: 0px 3vw 100px;
-      -o-flex-direction: column;
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
-      -webkit-flex-direction: column;
       -ms-flex-direction: column;
       flex-direction: column;
-      -o-justify-content: start;
       -webkit-box-pack: start;
-      -webkit-justify-content: start;
       -ms-flex-pack: start;
       justify-content: start;
       background-color: #110a1d;
@@ -372,22 +357,18 @@ button:hover {
       height: -webkit-max-content;
       height: -moz-max-content;
       height: max-content;
-      -o-flex-direction: column;
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
-      -webkit-flex-direction: column;
       -ms-flex-direction: column;
       flex-direction: column;
-      -o-justify-content: center;
       -webkit-box-pack: center;
-      -webkit-justify-content: center;
       -ms-flex-pack: center;
       justify-content: center;
       -webkit-box-align: start;
-      -webkit-align-items: start;
       -ms-flex-align: start;
       align-items: start;
-      gap: 1vh; }
+      -webkit-column-gap: 1vh;
+      column-gap: 1vh; }
     .header__link {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -441,30 +422,18 @@ button:hover {
     .header #language {
       display: none; }
     .header__content-mobile {
-      display: -webkit-flex;
       display: -webkit-box;
-      display: -moz-flex;
-      display: -moz-box;
       display: -ms-flexbox;
-      display: -ms-flex;
-      display: -o-flex;
       display: flex;
-      -o-justify-content: end;
       -webkit-box-pack: end;
-      -webkit-justify-content: end;
       -ms-flex-pack: end;
       justify-content: end; }
     .header__mobile-btn-group {
-      display: -webkit-flex;
       display: -webkit-box;
-      display: -moz-flex;
-      display: -moz-box;
       display: -ms-flexbox;
-      display: -ms-flex;
-      display: -o-flex;
       display: flex;
       margin: 0px 0px 0px auto;
-      border: 2px solid red;
+      border: 2px solid #2600ff;
       width: -webkit-max-content;
       width: -moz-max-content;
       width: max-content;
@@ -584,6 +553,7 @@ button:hover {
     -webkit-box-align: end;
     -ms-flex-align: end;
     align-items: end;
+    font-size: 0.8333vw;
     font-size: clamp(14px, 0.8333vw, 16px);
     line-height: 20px;
     font-weight: 400; }
@@ -600,6 +570,7 @@ button:hover {
     flex-direction: column;
     gap: 1.0277vh; }
   .footer__social-title {
+    font-size: 0.8333vw;
     font-size: clamp(14px, 0.8333vw, 16px);
     line-height: 20px;
     font-weight: 400;
@@ -633,6 +604,7 @@ button:hover {
 @media (max-width: 920px) {
   .footer {
     padding: 20px 0vw 30px;
+    border-radius: 15.625vw 15.625vw 0px 0px;
     border-radius: clamp(50px, 15.625vw, 64px) clamp(50px, 15.625vw, 64px) 0px 0px;
     border-width: 2px 2px 0px 2px; }
     .footer__wrapper {
@@ -658,6 +630,7 @@ button:hover {
       -webkit-box-align: end;
       -ms-flex-align: end;
       align-items: end;
+      font-size: 4.375vw;
       font-size: clamp(14px, 4.375vw, 18px); }
     .footer__social {
       height: -webkit-max-content;
@@ -672,6 +645,7 @@ button:hover {
       flex-direction: column;
       gap: 10px; }
     .footer__social-title {
+      font-size: 4.375vw;
       font-size: clamp(14px, 4.375vw, 18px);
       text-align: start; }
     .footer__social-group {
@@ -685,6 +659,7 @@ button:hover {
       -ms-flex-pack: start;
       justify-content: start; }
       .footer__social-link img {
+        width: 8.4375vw;
         width: clamp(27px, 8.4375vw, 60px);
         height: auto;
         border-radius: 50%; } }

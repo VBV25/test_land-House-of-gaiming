@@ -15,18 +15,7 @@
   &__content {
     width: 100%;
     height: 100%;
-    display: -webkit-flex;
-    display: -webkit-box;
-    display: -moz-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -ms-flex;
-    display: -o-flex;
     display: flex;
-
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
     justify-content: space-between;
   }
 
@@ -40,13 +29,6 @@
     }
   }
   &__nav {
-    display: -webkit-flex;
-    display: -webkit-box;
-    display: -moz-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -ms-flex;
-    display: -o-flex;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -132,20 +114,8 @@
       width: 100vw;
       height: max-content;
       padding: 0px 3vw 100px;
-
-      -o-flex-direction: column;
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-      -webkit-flex-direction: column;
-      -ms-flex-direction: column;
       flex-direction: column;
-
-      -o-justify-content: start;
-      -webkit-box-pack: start;
-      -webkit-justify-content: start;
-      -ms-flex-pack: start;
       justify-content: start;
-
       background-color: $documentBg;
       transition: all 1s ease 0s;
       overflow-y: scroll;
@@ -156,26 +126,10 @@
     &__nav {
       margin-top: 30px;
       height: max-content;
-
-      -o-flex-direction: column;
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-      -webkit-flex-direction: column;
-      -ms-flex-direction: column;
       flex-direction: column;
-
-      -o-justify-content: center;
-      -webkit-box-pack: center;
-      -webkit-justify-content: center;
-      -ms-flex-pack: center;
       justify-content: center;
-
-      -webkit-box-align: start;
-      -webkit-align-items: start;
-      -ms-flex-align: start;
       align-items: start;
-
-      gap: 1vh;
+      column-gap: 1vh;
     }
     &__link {
       display: flex;
@@ -214,32 +168,13 @@
 
     //---MOBILE-BTN---
     &__content-mobile {
-      display: -webkit-flex;
-      display: -webkit-box;
-      display: -moz-flex;
-      display: -moz-box;
-      display: -ms-flexbox;
-      display: -ms-flex;
-      display: -o-flex;
       display: flex;
-
-      -o-justify-content: end;
-      -webkit-box-pack: end;
-      -webkit-justify-content: end;
-      -ms-flex-pack: end;
       justify-content: end;
     }
     &__mobile-btn-group {
-      display: -webkit-flex;
-      display: -webkit-box;
-      display: -moz-flex;
-      display: -moz-box;
-      display: -ms-flexbox;
-      display: -ms-flex;
-      display: -o-flex;
       display: flex;
       margin: 0px 0px 0px auto;
-      border: 2px solid red;
+      border: 2px solid rgb(38, 0, 255);
       width: max-content;
       height: 100%;
     }
