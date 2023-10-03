@@ -27,10 +27,8 @@ function scrollbarVisible() {
   } else { blogProgressbar.style.display = '' }
 }
 //высчитываем процентное соотношение списка блогов относительно видимой части и делаем высоту скроллтрекера относительной этому соотношению
-let yLine
 let percentBlogVisible
 function percentBlogVisibleOrListFn() {
-  yLine = blogProgressbarLine.getBoundingClientRect().y;
   let bottomPositionPreviewGroupWrapper = Math.trunc(blogPreviewGroupWrapper.getBoundingClientRect().bottom)
   let bottomPositionPreviewGroup = Math.trunc(blogPreviewGroup.getBoundingClientRect().bottom)
   percentBlogVisible = (bottomPositionPreviewGroupWrapper * 100 / bottomPositionPreviewGroup)
@@ -42,6 +40,7 @@ let percentBlogListScroll
 let bottomPositionPreviewGroupWrapper
 let bottomPositionPreviewGroup
 let maxTopPositionLineProgressbar
+let maxBottomPositionPreviewGroupStart
 let topPositionScrollTracker
 let r
 let q
@@ -129,9 +128,12 @@ function collisionLineScrollbar() {
   }
 }
 
-
 //----синхронизация скроллбара кастомного------
 //-------- с прокручиваемым блоком-------
+document.addEventListener('scroll', () => {
+  let bottomPositionPreviewGroupWrapper = Math.trunc(blogPreviewGroupWrapper.getBoundingClientRect().bottom)
+  let bottomPositionPreviewGroup = Math.trunc(blogPreviewGroup.getBoundingClientRect().bottom)
+})
 blogPreviewGroupWrapper.addEventListener('scroll', () => {
   gettingВimensionsBlockFn()
   percentBlogListScrollFn()
@@ -208,6 +210,3 @@ window.onload = function () {
   gettingВimensionsBlockFn()
   percentBlogVisibleOrListFn()
 };
-
-
-

@@ -1180,7 +1180,7 @@ button:hover {
     .blog__preview-group {
       padding: 1.7vh 0px 1.7vh 3vw;
       padding: clamp(10px, 1.7vh, 50px) 0px clamp(10px, 1.7vh, 50px) clamp(10px, 3vw, 50px);
-      row-gap: 10px; }
+      grid-row-gap: 10px; }
     .blog__preview {
       width: 84vw;
       width: clamp(274px, 84vw, 800px);
