@@ -185,3 +185,14 @@ body::-webkit-scrollbar {
 #nav-block-header::-webkit-scrollbar {
   width: 0px;
 }
+
+.qwerty {
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  grid-column-gap: 3vw;
+  div {
+    border: 2px solid red;
+    width: 30vw;
+    height: 200px;
+  }
+}
