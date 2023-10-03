@@ -422,18 +422,23 @@ button:hover {
     .header #language {
       display: none; }
     .header__content-mobile {
+      display: -webkit-flex;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
+      -webkit-align-items: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-justify-content: flex-end;
       -webkit-box-pack: end;
       -ms-flex-pack: end;
-      justify-content: end; }
+      justify-content: flex-end; }
     .header__mobile-btn-group {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
-      margin: 0px 0px 0px auto;
-      border: 2px solid #2600ff;
+      border: 2px solid #00ff26;
       width: -webkit-max-content;
       width: -moz-max-content;
       width: max-content;
@@ -655,8 +660,7 @@ button:hover {
       -moz-column-gap: 2.8125vw;
       -o-column-gap: 2.8125vw;
       -webkit-column-gap: 2.8125vw;
-      column-gap: 2.8125vw;
-      border: 2px solid red; }
+      column-gap: 2.8125vw; }
     .footer__social-link {
       -webkit-box-pack: start;
       -ms-flex-pack: start;
