@@ -28,6 +28,26 @@ btnBurgerMenu.onclick = () => {
 }
 //----------------------------------------------
 
+//---------ВЫБОР СТАТЬИ В БЛОГЕ------
+const blogList = document.querySelectorAll('.blog__preview');
+const articleSelectionFn = (el) => {
+  el.classList.add('active-preview-blog')
+}
+const clearActiveElementListFn = (list) => {
+  list.forEach(listEl => {
+    listEl.classList.remove('active-preview-blog')
+  })
+}
+blogList.forEach((elClick) => {
+  clearActiveElementListFn(blogList)
+  elClick.onclick = () => {
+    clearActiveElementListFn(blogList)
+    articleSelectionFn(elClick)
+  }
+})
+//-----------------------------------------
+
+
 //--------БЕГУЩИЕ СТРОКИ-------------------------
 let firstStringMovement = document.getElementById('first-marquee');
 let secondStringMovement = document.getElementById('second-marquee');

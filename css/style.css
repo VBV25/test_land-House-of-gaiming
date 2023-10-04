@@ -153,29 +153,12 @@ img {
   :root {
     --widthContentWrapper: 92%; } }
 
-/*
-@media (max-width: 600px) {
-  :root {
-    --widthContentWrapper: 360px;
-  }
-  .container-wrapper {
-    border: 2px solid rgb(0, 21, 255);
-  }
-}
-@media (max-width: 365px) {
-  :root {
-    --widthContentWrapper: 280px;
-  }
-  .container-wrapper {
-    border: 2px solid rgb(0, 21, 255);
-  }
-}
-*/
 .active-footer-nav-link {
   text-decoration: underline;
   color: #478bf9; }
 
 .active-preview-blog {
+  color: #ffffff !important;
   background-color: #478bf9 !important; }
 
 a:focus {
